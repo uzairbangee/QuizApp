@@ -1,0 +1,35 @@
+.question{
+    background-color:rgba(0,0,0,.03);
+    margin-bottom: 20px;
+    width : 100%;
+}
+
+
+.no{
+    padding: 8px;
+    width : 100%;
+}
+
+.answer{
+    padding: 10px;
+    font-size: 14px;
+    display: block;
+    width : 100%;
+}
+
+.text{
+    padding-left: 10px;
+}
+
+.butt{
+    width:20%;
+    float: right;
+}
+
+button:disabled {
+    background-color: #cccccc;
+}
+button:disabled:hover {
+    background-color: #cccccc;
+    cursor: default;
+}

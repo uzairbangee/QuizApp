@@ -1,0 +1,12 @@
+.jumbotron{
+    background-color: aliceblue;
+}
+
+.btn-lg{
+    background-color: rgb(19, 168, 158);
+}
+
+.btn-lg:hover{
+    background-color: rgb(12, 196, 183);
+    cursor: pointer;
+}
