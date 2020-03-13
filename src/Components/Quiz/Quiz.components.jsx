@@ -84,6 +84,7 @@ class Quiz extends Component{
         marks: 0,
         user_select : "",
         disabled: true,
+        percentage: 0,
 
     }
 
@@ -97,11 +98,13 @@ class Quiz extends Component{
         const cal_arr = this.state.data_index.answers.filter(item => item.answer === this.state.user_select);
         cal_arr[0].status === 'correct' ? marks+=1 : marks+=0 ;
         newdata[index].status = true;
+        const percent = ((marks/newdata.length) * 100).toFixed(2);
         setTimeout(() => {
             this.setState({data: newdata, data_index : newdata.filter(item => item.status === false)[0],
                         user_select : "",
                         disabled : true,
                         marks : marks,
+                        percentage : percent,
                     });
         }, 1000);
     }
@@ -110,7 +113,7 @@ class Quiz extends Component{
 
 
     render(){
-        const {data_index, data, disabled, marks} = this.state;
+        const {data_index, data, disabled, marks, user_select, percentage} = this.state;
         console.log(marks);
         return (
             <Fragment>
@@ -124,13 +127,13 @@ class Quiz extends Component{
                             <div className="card card-body question">
                                 {data_index.id}. {data_index.question}
                             </div>
-                            {data_index.answers.map((item, index) => <Answers value={item.answer} key={index} change={this.handleChange} answer={item.answer}/> ) }
+                            {data_index.answers.map((item, index) => <Answers value={item.answer} select={user_select === item.answer ? true : false} key={index} change={this.handleChange} answer={item.answer}/> ) }
 
                             <button className="btn-lg butt" disabled={disabled} onClick={(event) => this.changeQuestion(event, data_index.id - 1)}>Next</button>
                         </div>
                     </div>
                 :
-                <Marks marks={marks}/>
+                <Marks marks={marks} percent={percentage}/>
                 }
             </Fragment>
         )

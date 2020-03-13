@@ -1,3 +1,11 @@
 .newone{
     width:18rem;
+    top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.marks{
+    color:red;
 }

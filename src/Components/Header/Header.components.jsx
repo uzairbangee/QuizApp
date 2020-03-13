@@ -1,5 +1,5 @@
 import React, {Fragment, Component} from "react"
-import './logo.png';
+import logo from './logo.png';
 import './Header.css';
 
 class Header extends Component{
@@ -9,15 +9,15 @@ class Header extends Component{
             <Fragment>
                 <nav className="navbar navbar-dark bg-dark">
 
-                    <img src="./logo.png" alt="Logo"/>
+                    <img src={logo} alt="Logo" className="logo"/>
 
                         { this.props.loggedIn && this.props.loggedIn === true &&
                         <div class="btn-group">
                         <button type="button" className="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         {this.props.username}
                         </button>
-                        <div class="dropdown-menu">
-                            <li class="dropdown-item" onClick={this.props.logout}>logout</li>
+                        <div className="dropdown-menu">
+                            <li className="dropdown-item" onClick={this.props.logout}>logout</li>
                         </div>
                         </div>
                         }

@@ -7,13 +7,13 @@ const Login = (props) => {
         return (
             <Fragment>
                 {props.loggedIn  === true &&
-                <div class="alert alert-success" role="alert">
+                <div className="alert alert-success" role="alert">
                     Success
                 </div>
                 }
                 {
                 props.loggedIn === false &&
-                <div class="alert alert-danger" role="alert">
+                <div className="alert alert-danger" role="alert">
                 Wrong Credentials
                 </div>
                 }
